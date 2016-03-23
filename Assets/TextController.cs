@@ -31,8 +31,8 @@ public class TextController : MonoBehaviour {
 		else if (myState == States.floor)       floor();
 		else if (myState == States.freedom) 	freedom();
 	}
-
-//PART I
+	#region State handler methods
+		#region PART I
 
 	void cell() {
 		text.text = "You are in a prison cell, and you want to escape. There are " +
@@ -97,9 +97,9 @@ public class TextController : MonoBehaviour {
 		if 		(Input.GetKeyDown (KeyCode.O)) myState = States.corridor_0;
 		else if (Input.GetKeyDown (KeyCode.R)) myState = States.cell_mirror;	
 	}
+		#endregion PART I
 	
-//PART II
-	
+		#region PART II
 	void corridor_0() {
 		text.text = "You are in a corridor. There's no going back.\n\n" +
 					"Press a letter below to perform the action:" +
@@ -139,4 +139,6 @@ public class TextController : MonoBehaviour {
 		if 		(Input.GetKeyDown (KeyCode.P)) myState = States.cell;
 		else if (Input.GetKeyDown (KeyCode.Q)) Application.Quit();
 	}
+		#endregion PART II
+	#endregion State handler methods
 }
